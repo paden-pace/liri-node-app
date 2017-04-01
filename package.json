@@ -1,0 +1,27 @@
+{
+  "name": "liri-node-app",
+  "version": "1.0.0",
+  "description": "Using terminal to look up song or movie information",
+  "main": "liri.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paden-pace/liri-node-app.git"
+  },
+  "keywords": [
+    "spotify",
+    "omdb",
+    "liri"
+  ],
+  "author": "Paden Pace",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paden-pace/liri-node-app/issues"
+  },
+  "homepage": "https://github.com/paden-pace/liri-node-app#readme",
+  "dependencies": {
+    "file-system": "^2.2.2"
+  }
+}
