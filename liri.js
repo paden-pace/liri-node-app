@@ -87,12 +87,12 @@ function questionOptions (){
                 },
             ]).then(function(movie) {
                 if (movie.name == "") {
-                    // console.log("Mr.Nobody")
                     var title = "Mr. Nobody";
                     var newTitle = title.split(' ').join('+');
-                    var url = "http://www.omdbapi.com/?t=" + newTitle + "&y=&plot=short&r=json";
+                    var url = "http://www.omdbapi.com/?t=" + newTitle + "&y=&plot=short&r=json&tomatoes=true";
 
                     console.log(url);
+                    
 
                     // Then run a request to the OMDB API with the movie specified
                     request(url, function(error, response, body) {
@@ -113,8 +113,7 @@ function questionOptions (){
                             console.log("Language: " + JSON.parse(body).Language);
                             console.log("Plot: " + JSON.parse(body).Plot);
                             console.log("Actors: " + JSON.parse(body).Actors);
-                            // console.log("Rotten Tomatoes Rating: " + JSON.parse(body).Year);
-                            // console.log("Rotten Tomatoes URL: " + JSON.parse(body).Year);
+                            console.log("Rotten Tomatos: " + JSON.parse(body).Ratings[1].Value);
                             console.log("");
                             console.log("----------------------------------------------");
                         }
@@ -122,9 +121,10 @@ function questionOptions (){
                 } else {
                     var title = movie.name;
                     var newTitle = title.split(' ').join('+');
-                    var url = "http://www.omdbapi.com/?t=" + newTitle + "&y=&plot=short&r=json";
+                    var url = "http://www.omdbapi.com/?t=" + newTitle + "&y=&plot=short&r=json&tomatoes=true";
 
                     console.log(url);
+                    //console.log(tomatoURL);
 
                     // Then run a request to the OMDB API with the movie specified
                     request(url, function(error, response, body) {
@@ -145,8 +145,7 @@ function questionOptions (){
                             console.log("Language: " + JSON.parse(body).Language);
                             console.log("Plot: " + JSON.parse(body).Plot);
                             console.log("Actors: " + JSON.parse(body).Actors);
-                            // console.log("Rotten Tomatoes Rating: " + JSON.parse(body).Year);
-                            // console.log("Rotten Tomatoes URL: " + JSON.parse(body).Year);
+                            console.log("Rotten Tomatos: " + JSON.parse(body).Ratings[1].Value);
                             console.log("");
                             console.log("----------------------------------------------");
                         }
